@@ -1,2 +1,2 @@
 # EntityUtils
-A entity utility mod for Minecraft Fabric.
+An entity utility mod for Minecraft Fabric.
