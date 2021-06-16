@@ -4,9 +4,13 @@
   "package": "github.Louwind.entityutils.core.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "AbstractSignBlockMixin",
     "DamageSourceInvoker",
+    "EntityModelLayersMixin",
     "MemoryModuleTypeInvoker",
-    "SensorTypeInvoker"
+    "SensorTypeInvoker",
+    "SignTypeInvoker",
+    "TexturedRenderLayersMixin"
   ],
   "client": [
   ],

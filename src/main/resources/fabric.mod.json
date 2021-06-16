@@ -21,6 +21,7 @@
       "github.Louwind.entityutils.client.EntityUtilsClient"
     ]
   },
+  "accessWidener": "entityutils.accesswidener",
   "mixins": [
     "entityutils.mixins.json"
   ],

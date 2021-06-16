@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 import java.util.Optional;
 
 @Mixin(MemoryModuleType.class)
-public class MemoryModuleTypeInvoker {
+public interface MemoryModuleTypeInvoker {
 
     @Invoker("<init>")
     static <U> MemoryModuleType<U> create(Optional<Codec<U>> codec) {
