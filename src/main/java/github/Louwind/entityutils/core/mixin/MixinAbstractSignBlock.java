@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import static net.minecraft.util.registry.Registry.BLOCK_ENTITY_TYPE;
 
 @Mixin(AbstractSignBlock.class)
-public class AbstractSignBlockMixin {
+public class MixinAbstractSignBlock {
 
     @Shadow
     @Final

@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(SignType.class)
-public interface SignTypeInvoker {
+public interface InvokerSignType {
 
     @Invoker("register")
     static SignType register(SignType type) {

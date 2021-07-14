@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(EntityModelLayers.class)
-public abstract class EntityModelLayersMixin {
+public abstract class MixinEntityModelLayers {
 
     @Inject(method = "createSign", at = @At("HEAD"), cancellable = true)
     private static void createSign(SignType type, CallbackInfoReturnable<EntityModelLayer> cir) {

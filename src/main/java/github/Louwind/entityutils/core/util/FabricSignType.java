@@ -1,6 +1,6 @@
 package github.Louwind.entityutils.core.util;
 
-import github.Louwind.entityutils.core.mixin.SignTypeInvoker;
+import github.Louwind.entityutils.core.mixin.InvokerSignType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.SignType;
 
@@ -14,7 +14,7 @@ public class FabricSignType extends SignType {
         var layer = new Identifier(namespace + ":signs/" + name);
         var texture = new Identifier(namespace + ":entity/signs/" + name);
 
-        return SignTypeInvoker.register(new FabricSignType(namespace, new Identifier(entityType), layer, texture));
+        return InvokerSignType.register(new FabricSignType(namespace, new Identifier(entityType), layer, texture));
     }
 
     private final Identifier entityType;
