@@ -8,6 +8,7 @@ import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory.Context;
 import net.minecraft.client.render.entity.model.BoatEntityModel;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
@@ -32,7 +33,7 @@ public class FabricBoatEntityRenderer<T extends FabricBoatEntity> extends Entity
 
         this.shadowRadius = 0.8F;
         this.texturesAndModels = FabricBoatType.stream().collect(Collectors.toMap(Function.identity(), type -> {
-            var layer = EntityModelLayers.create(type.getLayer(), "main");
+            var layer = new EntityModelLayer(type.getLayer(), "main");
             var model = new BoatEntityModel(context.getPart(layer));
 
             return Pair.of(type.getTexture(), model);

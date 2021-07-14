@@ -15,7 +15,7 @@ public class FabricBoatType {
         var namespace = id.getNamespace();
         var path = id.getPath();
 
-        var layer = namespace + ":boat/" + path;
+        var layer = new Identifier(namespace + ":boat/" + path);
         var lootTableId = new Identifier(namespace + ":entities/boat/" + path);
         var texture = new Identifier(namespace + ":textures/entities/boat/" + path + ".png");
 
@@ -34,20 +34,20 @@ public class FabricBoatType {
         return VALUES.values().stream();
     }
 
-    private final String layer;
     private final String name;
 
+    private final Identifier layer;
     private final Identifier lootTableId;
     private final Identifier texture;
 
-    private FabricBoatType(String name, Identifier lootTableId, String layer, Identifier texture) {
+    private FabricBoatType(String name, Identifier lootTableId, Identifier layer, Identifier texture) {
         this.lootTableId = lootTableId;
         this.layer = layer;
         this.name = name;
         this.texture = texture;
     }
 
-    public String getLayer() {
+    public Identifier getLayer() {
         return this.layer;
     }
 
