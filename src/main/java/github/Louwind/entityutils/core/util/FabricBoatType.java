@@ -21,7 +21,9 @@ public class FabricBoatType {
 
         var boatType = new FabricBoatType(name, lootTableId, layer, texture);
 
-        return VALUES.put(id, boatType);
+        VALUES.put(id, boatType);
+
+        return boatType;
     }
 
     public static FabricBoatType getBoatType(String id) {
