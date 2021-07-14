@@ -17,7 +17,7 @@ public class FabricBoatType {
 
         var layer = new Identifier(namespace + ":boat/" + path);
         var lootTableId = new Identifier(namespace + ":entities/boat/" + path);
-        var texture = new Identifier(namespace + ":textures/entities/boat/" + path + ".png");
+        var texture = new Identifier(namespace + ":textures/entity/boat/" + path + ".png");
 
         var boatType = new FabricBoatType(name, lootTableId, layer, texture);
 
