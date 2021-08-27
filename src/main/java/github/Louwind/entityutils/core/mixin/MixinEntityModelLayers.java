@@ -15,11 +15,8 @@ public abstract class MixinEntityModelLayers {
     @Inject(method = "createSign", at = @At("HEAD"), cancellable = true)
     private static void createSign(SignType type, CallbackInfoReturnable<EntityModelLayer> cir) {
 
-        if(type instanceof FabricSignType) {
-            var signType = (FabricSignType) type;
-
+        if(type instanceof FabricSignType signType)
             cir.setReturnValue(new EntityModelLayer(signType.getLayer(), "main"));
-        }
 
     }
 

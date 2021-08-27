@@ -62,9 +62,8 @@ public class FabricBoatEntity extends BoatEntity {
             this.setDamageWobbleStrength(this.getDamageWobbleStrength() + amount * 10.0F);
             this.scheduleVelocityUpdate();
 
-            if (trueSource instanceof PlayerEntity) {
+            if (trueSource instanceof PlayerEntity player) {
                 var gameRules = this.world.getGameRules();
-                var player = (PlayerEntity) trueSource;
 
                 if (!player.isCreative() && gameRules.getBoolean(DO_ENTITY_DROPS)) {
                     var server = (ServerWorld) this.world;
@@ -92,7 +91,7 @@ public class FabricBoatEntity extends BoatEntity {
         if(server != null) {
             var manager = this.world.getServer().getLootManager();
 
-            var id = this.getFabricBoatType().getLootTableId();
+            var id = this.getFabricBoatType().lootTableId();
             var table = manager.getTable(id);
 
             table.generateLoot(context.build(BOAT_LOOT), this::dropStack);

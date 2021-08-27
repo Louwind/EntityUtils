@@ -25,8 +25,7 @@ public class MixinAbstractSignBlock {
     @Inject(method = "createBlockEntity", at = @At("HEAD"), cancellable = true)
     private void createBlockEntity(BlockPos pos, BlockState state, CallbackInfoReturnable<BlockEntity> cir) {
 
-        if(this.type instanceof FabricSignType) {
-            var type = (FabricSignType) this.type;
+        if(this.type instanceof FabricSignType type) {
             var id = type.getEntityType();
             var blockEntityType = BLOCK_ENTITY_TYPE.get(id);
 

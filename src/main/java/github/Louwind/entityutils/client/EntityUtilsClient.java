@@ -4,7 +4,7 @@ import github.Louwind.entityutils.core.util.FabricBoatType;
 import github.Louwind.entityutils.core.util.FabricSignType;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
-import net.fabricmc.fabric.impl.client.renderer.registry.EntityModelLayerImpl;
+import net.fabricmc.fabric.impl.client.rendering.EntityModelLayerImpl;
 import net.minecraft.client.render.entity.model.BoatEntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.SignType;
@@ -22,7 +22,7 @@ public class EntityUtilsClient implements ClientModInitializer {
                 .forEach(registry::register));
 
         FabricBoatType.stream()
-                .map(FabricBoatType::getLayer)
+                .map(FabricBoatType::layer)
                 .map(layer -> new EntityModelLayer(layer, "main"))
                 .forEach(layer -> EntityModelLayerImpl.PROVIDERS.put(layer, BoatEntityModel::getTexturedModelData));
     }

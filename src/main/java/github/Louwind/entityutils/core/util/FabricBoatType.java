@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class FabricBoatType {
+public record FabricBoatType(String name, Identifier lootTableId, Identifier layer, Identifier texture) {
 
     private static final Map<Identifier, FabricBoatType> VALUES = Maps.newHashMap();
 
@@ -32,31 +32,6 @@ public class FabricBoatType {
 
     public static Stream<FabricBoatType> stream() {
         return VALUES.values().stream();
-    }
-
-    private final String name;
-
-    private final Identifier layer;
-    private final Identifier lootTableId;
-    private final Identifier texture;
-
-    private FabricBoatType(String name, Identifier lootTableId, Identifier layer, Identifier texture) {
-        this.lootTableId = lootTableId;
-        this.layer = layer;
-        this.name = name;
-        this.texture = texture;
-    }
-
-    public Identifier getLayer() {
-        return this.layer;
-    }
-
-    public Identifier getLootTableId() {
-        return this.lootTableId;
-    }
-
-    public Identifier getTexture() {
-        return this.texture;
     }
 
     @Override

@@ -22,8 +22,7 @@ public abstract class MixinTexturedRenderLayers {
     @Inject(method = "getSignTextureId", at = @At("HEAD"), cancellable = true)
     private static void createSignTextureId(SignType type, CallbackInfoReturnable<SpriteIdentifier> cir) {
 
-        if(type instanceof FabricSignType) {
-            var signType = (FabricSignType) type;
+        if(type instanceof FabricSignType signType) {
             var texture = signType.getTexture();
 
             cir.setReturnValue(new SpriteIdentifier(SIGNS_ATLAS_TEXTURE, texture));
